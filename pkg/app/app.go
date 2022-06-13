@@ -145,7 +145,7 @@ func (k *App) Run() {
 			log.Fatal(http.ListenAndServeTLS(k.c.TLSAddr, certFile, keyFile, r))
 		}()
 	} else {
-		log.Printf("Could not find certificates to serve TLS")
+		log.Printf("Could not find certificates to serve TLS %s", k.c.TLSDir)
 	}
 
 	log.Printf("Serving on HTTP on %v", k.c.ServeAddr)
